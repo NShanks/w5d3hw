@@ -68,11 +68,11 @@ WHERE customer_id IN (
 	SELECT customer_id
 	FROM payment
 	GROUP BY customer_id
-	HAVING SUM(amount) > 6.99
+	where amount > 6.99
 	ORDER BY SUM(amount) DESC
 )
 GROUP BY store_id, first_name, last_name;
--- 130 Customers
+-- 130 Customers, not working
 
 -- 8. How many free rentals did our stores give away?
 select *
